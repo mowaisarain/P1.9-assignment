@@ -11,5 +11,6 @@ struct _mdsys {
     double *vx, *vy, *vz;
     double *fx, *fy, *fz;
 };
+typedef struct _mdsys mdsys_t;
 
 #endif /* __MDSTRUCT */
