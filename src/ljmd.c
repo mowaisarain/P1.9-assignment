@@ -5,10 +5,9 @@
  * baseline c version.
  */
 
-#include <stdio.h>
+#include "./mdstruct.h"
 #include <string.h>
 #include <ctype.h>
-#include <stdlib.h>
 #include <math.h>
 
 /* generic file- or pathname buffer length */
@@ -20,14 +19,7 @@ const double mvsq2e=2390.05736153349; /* m*v^2 in kcal/mol */
 
 /* structure to hold the complete information 
  * about the MD system */
-struct _mdsys {
-    int natoms,nfi,nsteps;
-    double dt, mass, epsilon, sigma, box, rcut;
-    double ekin, epot, temp;
-    double *rx, *ry, *rz;
-    double *vx, *vy, *vz;
-    double *fx, *fy, *fz;
-};
+
 typedef struct _mdsys mdsys_t;
 
 /* helper function: read a line and then return
