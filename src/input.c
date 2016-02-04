@@ -1,6 +1,9 @@
+#ifndef __CMPLINP
+#define __CMPLINP
+#endif
+
 #include "./input.h"
-
-
+#include "./constants.h"
 
 /* helper function: read a line and then return
    the first string with whitespace stripped off */

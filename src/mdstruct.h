@@ -1,5 +1,5 @@
-#include <stdlib.h>
-
+#ifndef __MDSTRUCT
+#define __MDSTRUCT
 
 /* structure to hold the complete information 
  * about the MD system */
@@ -11,3 +11,5 @@ struct _mdsys {
     double *vx, *vy, *vz;
     double *fx, *fy, *fz;
 };
+
+#endif /* __MDSTRUCT */
