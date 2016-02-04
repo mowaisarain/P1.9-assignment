@@ -1,6 +1,8 @@
-#include <stdio.h>
 #include <stdlib.h>
 
+
+/* structure to hold the complete information 
+ * about the MD system */
 struct _mdsys {
     int natoms,nfi,nsteps;
     double dt, mass, epsilon, sigma, box, rcut;
