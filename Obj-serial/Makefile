@@ -5,7 +5,7 @@ CFLAGS=-Wall -g -O3 -ffast-math -fomit-frame-pointer
 LDLIBS=-lm
 
 # list of source files
-SRC=ljmd.c input.c
+SRC=ljmd.c input.c utilities.c
 VPATH=../src
 OBJ=$(SRC:%.c=%.o)
 
@@ -25,3 +25,4 @@ clean:
 # dependencies
 ljmd.o: ljmd.c
 input.o: input.c
+utilities.o: utilities.c
