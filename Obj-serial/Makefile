@@ -30,4 +30,3 @@ force.o: force.c
 verlet1.o: verlet1.c
 verlet2.o: verlet2.c
 output.o: output.c
-

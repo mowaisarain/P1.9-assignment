@@ -7,18 +7,21 @@
 
 #include "./mdstruct.h"
 #include "./input.h"
+#include "./output.h"
 #include "./constants.h"
 #include "./utilities.h"
 #include "./force.h"
 #include "./verlet.h"
 #include <ctype.h>
 #include <math.h>
-
-
+#include <time.h>
 
 /* main */
 int main(int argc, char **argv) 
 {
+    clock_t start,end;  //timing variables
+    double time_spent;
+
     int nprint, i;
     char restfile[BLEN], trajfile[BLEN], ergfile[BLEN], line[BLEN];
     FILE *fp,*traj,*erg;
@@ -88,6 +91,9 @@ int main(int argc, char **argv)
     printf("     NFI            TEMP            EKIN                 EPOT              ETOT\n");
     output(&sys, erg, traj);
 
+	//Start timing
+	start = clock();
+
     /**************************************************/
     /* main MD loop */
     for(sys.nfi=1; sys.nfi <= sys.nsteps; ++sys.nfi) {
@@ -108,9 +114,13 @@ int main(int argc, char **argv)
         ekin(&sys);
     }
     /**************************************************/
+	end = clock();
+	//end timing
+    time_spent = (double) (end - start) / CLOCKS_PER_SEC;
 
     /* clean up: close files, free memory */
     printf("Simulation Done.\n");
+    printf("Timing: %f Seconds.\n", time_spent);
     fclose(erg);
     fclose(traj);
 
