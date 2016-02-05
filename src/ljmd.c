@@ -15,10 +15,14 @@
 #include <ctype.h>
 #include <math.h>
 #include <time.h>
+#include <omp.h>
 
 /* main */
 int main(int argc, char **argv) 
 {
+
+    omp_set_num_threads(MY_NUM_THREADS);
+    
     clock_t start,end;  //timing variables
     double time_spent;
 
